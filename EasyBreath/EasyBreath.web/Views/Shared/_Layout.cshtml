@@ -1,0 +1,230 @@
+﻿@using EasyBreath.web.Extensions
+<!DOCTYPE html>
+
+<html>
+<head>
+     <meta name="viewport" content="width=device-width" />
+     <meta charset="utf-8">
+     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+     <title>EasyBreath</title>
+     <meta content="" name="description">
+     <meta content="" name="keywords">
+
+     <!-- Favicons -->
+     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <link href="~/assets/img/chili-pepper.png" rel="icon">
+     <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+     <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+     <!-- Vendor CSS Files -->
+     <link href="~/assets/vendor/aos/aos.css" rel="stylesheet">
+     <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+     <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+     <link href="~/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+     <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+     <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+     <!-- Template Main CSS File -->
+     <link href="~/assets/css/style.css" rel="stylesheet">
+     <link rel="stylesheets" href="~/assets/css/loginPage.css">
+
+
+
+
+     <!-- =======================================================
+     * Template Name: Gp - v4.10.0
+     * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+     * Author: BootstrapMade.com
+     * License: https://bootstrapmade.com/license/
+     ======================================================== -->
+
+</head>
+<body>
+     @Html.Partial("_Header")
+
+
+     <div>
+          @RenderBody()
+     </div>
+
+     @Html.Partial("_Footer")
+
+
+     <div id="preloader"></div>
+     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+     <!-- Vendor JS Files -->
+     <script src="~/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+     <script src="~/assets/vendor/aos/aos.js"></script>
+     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+     <script src="~/assets/vendor/glightbox/js/glightbox.min.js"></script>
+     <script src="~/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+     <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+     <script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+     <!-- Template Main JS File -->
+     <script src="~/assets/js/main.js"></script>
+     <script>
+          var iconMoon = document.getElementById("iconMoon");
+          var SetTheme = document.body;
+
+
+          iconMoon.onclick = function () {
+               SetTheme.classList.toggle("dark-theme");
+
+               var theme;
+
+               if (SetTheme.classList.contains("dark-theme")) {
+                    iconMoon.src = "/assets/img/sun.png";
+                    console.log("Dark mode");
+                    theme = "DARK";
+
+               }
+               else {
+                    iconMoon.src = "/assets/img/moon.png";
+                    console.log("Light mode");
+                    theme = "LIGHT";
+               }
+               localStorage.setItem("PageTheme", JSON.stringify(theme));
+          }
+
+          let GetTheme = JSON.parse(localStorage.getItem("PageTheme"));
+          console.log(GetTheme);
+
+          if (GetTheme === "DARK") {
+               document.body.classList = "dark-theme";
+          }
+
+     </script>
+     <script>
+          $(document).ready(function () {
+               var itemsMainDiv = ('.MultiCarousel');
+               var itemsDiv = ('.MultiCarousel-inner');
+               var itemWidth = "";
+
+               $('.leftLst, .rightLst').click(function () {
+                    var condition = $(this).hasClass("leftLst");
+                    if (condition)
+                         click(0, this);
+                    else
+                         click(1, this)
+               });
+
+               ResCarouselSize();
+
+
+
+
+               $(window).resize(function () {
+                    ResCarouselSize();
+               });
+
+               //this function define the size of the items
+               function ResCarouselSize() {
+                    var incno = 0;
+                    var dataItems = ("data-items");
+                    var itemClass = ('.item');
+                    var id = 0;
+                    var btnParentSb = '';
+                    var itemsSplit = '';
+                    var sampwidth = $(itemsMainDiv).width();
+                    var bodyWidth = $('body').width();
+                    $(itemsDiv).each(function () {
+                         id = id + 1;
+                         var itemNumbers = $(this).find(itemClass).length;
+                         btnParentSb = $(this).parent().attr(dataItems);
+                         itemsSplit = btnParentSb.split(',');
+                         $(this).parent().attr("id", "MultiCarousel" + id);
+
+
+                         if (bodyWidth >= 1200) {
+                              incno = itemsSplit[3];
+                              itemWidth = sampwidth / incno;
+                         }
+                         else if (bodyWidth >= 992) {
+                              incno = itemsSplit[2];
+                              itemWidth = sampwidth / incno;
+                         }
+                         else if (bodyWidth >= 768) {
+                              incno = itemsSplit[1];
+                              itemWidth = sampwidth / incno;
+                         }
+                         else {
+                              incno = itemsSplit[0];
+                              itemWidth = sampwidth / incno;
+                         }
+                         $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+                         $(this).find(itemClass).each(function () {
+                              $(this).outerWidth(itemWidth);
+                         });
+
+                         $(".leftLst").addClass("over");
+                         $(".rightLst").removeClass("over");
+
+                    });
+               }
+
+
+               //this function used to move the items
+               function ResCarousel(e, el, s) {
+                    var leftBtn = ('.leftLst');
+                    var rightBtn = ('.rightLst');
+                    var translateXval = '';
+                    var divStyle = $(el + ' ' + itemsDiv).css('transform');
+                    var values = divStyle.match(/-?[\d\.]+/g);
+                    var xds = Math.abs(values[4]);
+                    if (e == 0) {
+                         translateXval = parseInt(xds) - parseInt(itemWidth * s);
+                         $(el + ' ' + rightBtn).removeClass("over");
+
+                         if (translateXval <= itemWidth / 2) {
+                              translateXval = 0;
+                              $(el + ' ' + leftBtn).addClass("over");
+                         }
+                    }
+                    else if (e == 1) {
+                         var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+                         translateXval = parseInt(xds) + parseInt(itemWidth * s);
+                         $(el + ' ' + leftBtn).removeClass("over");
+
+                         if (translateXval >= itemsCondition - itemWidth / 2) {
+                              translateXval = itemsCondition;
+                              $(el + ' ' + rightBtn).addClass("over");
+                         }
+                    }
+                    $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+               }
+
+               //It is used to get some elements from btn
+               function click(ell, ee) {
+                    var Parent = "#" + $(ee).parent().attr("id");
+                    var slide = $(Parent).attr("data-slide");
+                    ResCarousel(ell, Parent, slide);
+               }
+
+          });
+     </script>
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+     <script>
+          function closePopup() {
+               var popup = document.getElementById("myPopup");
+               popup.classList.remove("show");
+               location.reload(); // Refresh the page
+          }
+
+          document.getElementById("myButton").addEventListener("click", function () {
+               var popup = document.getElementById("myPopup");
+               popup.classList.add("show");
+          });
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿
+@{
+     ViewBag.Title = "Portfolio";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<main id="main">
+     <section id="breadcrumbs" class="breadcrumbs" style="margin-top: 69px">
+          <div class="container text-register">
+               <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="page-title">Portfolio</h2>
+                    <ol>
+                         <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                         <li>Portfolio</li>
+                    </ol>
+               </div>
+
+          </div>
+     </section>
+     <!-- ======= Portfolio Details Section ======= -->
+     <section id="portfolio-details" class="portfolio-details text-register">
+          <div class="container">
+
+               <div class="row gy-4">
+
+                    <div class="col-lg-8">
+                         <div class="portfolio-details-slider swiper">
+                             <div class="swiper-wrapper align-items-center">
+
+                                 <div class="swiper-slide">
+                                     <img src="~/assets/img/portfolio/portfolio1.jpg" alt="">
+                                 </div>
+
+                                 <div class="swiper-slide">
+                                     <img src="~/assets/img/portfolio/portfolio2.jpg" alt="">
+                                 </div>
+
+                                 <div class="swiper-slide">
+                                     <img src="~/assets/img/portfolio/portfolio3.jpg" alt="">
+                                 </div>
+
+                                 <div class="swiper-slide">
+                                     <img src="~/assets/img/portfolio/portfolio4.jpg" alt="">
+                                 </div>
+
+                             </div>
+                              <div class="swiper-pagination"></div>
+                         </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                         <div class="portfolio-info">
+                              <h3>Project information</h3>
+                              <ul>
+                                  <li><strong>Category</strong>: Web platform </li>
+                                  <li><strong>Academy Group</strong>: TI-211 </li>
+                                  <li><strong>Client</strong>: Tehnical Universuty of Moldova</li>
+                                  <li><strong>Project date</strong>: 01 March, 2023</li>
+                                  <li><strong>Project URL</strong>: <a href="@Url.Action("Index", "Home")">www.easybreath.com</a></li>
+                              </ul>
+                         </div>
+                         <div class="portfolio-description">
+                              <h2>EasyBreath</h2>
+                              <p>
+                                   Web platform that facilitates user experience by providing information and useful health resources.
+                                   <div class="social-links" style=" text-align:center">
+                                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                   </div>
+                         </div>
+
+                    </div>
+
+               </div>
+     </section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->

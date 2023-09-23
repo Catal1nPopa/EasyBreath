@@ -1,0 +1,350 @@
+﻿
+@{
+     ViewBag.Title = "Index";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+            <div class="col-xl-10 col-lg-12">
+                <h1>A healthy life with Easy Breath<span>.</span></h1>
+                <h2> Better health. Better busy. Better balance.</h2>
+            </div>
+        </div>
+
+        <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+            <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                    <i class="ri-store-line"></i>
+                    <h3><a href="@Url.Action("Sport", "Home")">Sport</a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                    <i class="ri-bar-chart-box-line"></i>
+                    <h3><a href="@Url.Action("Statistic", "Home")">Statistics</a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                    <i class="ri-calendar-todo-line"></i>
+                    <h3><a href="@Url.Action("Index", "Event")">Event</a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                    <i class="ri-paint-brush-line"></i>
+                    <h3><a href="@Url.Action("Nutrition", "Home")">Nutrition</a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                    <i class="ri-database-2-line"></i>
+                    <h3><a href="@Url.Action("Index", "Products")">Shop</a></h3>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script type="text/javascript">
+            setTimeout(function () {
+                $(".letter-image").remove();
+            }, 10000);
+        </script>
+
+        <div class="letter-image">
+            <div class="animated-mail">
+                <div class="back-fold"></div>
+                <div class="letter">
+                    <div class="letter-border"></div>
+                    <div class="letter-title">
+                        <h3>Welcome</h3>
+                    </div>
+                    <div class="letter-context"></div>
+                    <div class="letter-stamp">
+                        <div class="letter-stamp-inner"></div>
+                    </div>
+                </div>
+                <div class="top-fold"></div>
+                <div class="body"></div>
+                <div class="left-fold"></div>
+            </div>
+            <div class="shadow"></div>
+        </div>
+
+    </div>
+</section>
+
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container" style="margin-top: 50px" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                    <img src="~/assets/img/image.png" class="img-fluid" alt="" style="height: 350px; width: 600px; margin-left: 50px">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+                    <h3>Benefits of adopting a healthy lifestyle:</h3>
+                    <ul>
+                        <li><i class="ri-check-double-line"></i><b class="fst-italic"> Improved physical health:</b> A healthy lifestyle can help reduce the risk of chronic diseases such as obesity, type 2 diabetes, heart disease, and certain types of cancer.</li>
+                        <li><i class="ri-check-double-line"></i><b class="fst-italic"> Better mental health: </b> Regular exercise, good sleep habits, and a balanced diet can help reduce stress, anxiety, and depression symptoms.</li>
+                        <li><i class="ri-check-double-line"></i><b class="fst-italic"> Improved quality of life:</b> A healthy lifestyle can help you feel better and enjoy life more.</li>
+                        <li><i class="ri-check-double-line"></i><b class="fst-italic"> Reduced healthcare costs: </b> This can help you avoid costly medical treatments and procedures in the long run.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+
+     <!-- -->
+    <section id="services" class="services text-register">
+        <div class="container text-register" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Products</h2>
+                <p>Check our Products</p>
+            </div>
+
+            <div class="row text-register" >
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box text-register">
+                        <div class="icon text-register"><i class="bx bxl-dribbble"></i></div>
+                        <h4><a href=@Url.Action("Vitamins", "Home")>Vitamins</a></h4>
+                        <p>Vitamins are essential nutrients that your body needs to function properly and stay healthy</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-file"></i></div>
+                        <h4><a href=@Url.Action("Index", "Event")>Events</a></h4>
+                        <p>Events can bring people together, creating a sense of community and belonging.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-tachometer"></i></div>
+                        <h4><a href=@Url.Action("Diete", "Home")>Diets</a></h4>
+                        <p>Types and amounts of food and drink that a person consumes regularly.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row no-gutters">
+                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
+                <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
+                    <div class="content d-flex flex-column justify-content-center">
+                        <h3><a href=@Url.Action("Event", "Home")>Colorful Bowls </a></h3>
+
+                        <p class="text-register">
+                            Smoothie bowls are a popular way to enjoy blended mixes of fruits, vegetables, grains, and other healthy ingredients. By using naturally colorful components, you can create a gorgeous spectrum of foods that are as good for your body as they’re pleasing to the eye!
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                <div class="count-box">
+                                    <i class="bi bi-emoji-smile"></i>
+                                    <span data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="2" class="purecounter text-register"></span>
+                                    <p><strong><b class="text-register">Happy Clients </b></strong></p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                <div class="count-box">
+                                    <i class="bi bi-journal-richtext"></i>
+                                    <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="2" class="purecounter text-register"></span>
+                                    <p><strong class="text-register">Projects</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                <div class="count-box">
+                                    <i class="bi bi-clock"></i>
+                                    <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="4" class="purecounter text-register"></span>
+                                    <p><strong class="text-register">Years of experience</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                <div class="count-box">
+                                    <i class="bi bi-award"></i>
+                                    <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="4" class="purecounter text-register"></span>
+                                    <p><strong class="text-register">Awards</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End .content-->
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Counts Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+        <div class="container" data-aos="zoom-in">
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="~/assets/img/shop/vitamin-1.png" class="testimonial-img" alt="">
+                            <h3>Omega 3</h3>
+                            <p>
+                                <i class="bx"></i>
+                                Omega-3 fatty acids are a group of polyunsaturated fatty acids that are important for a number of functions in the body.
+                                <i class="bx"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="~/assets/img/shop/vitamin-2.png" class="testimonial-img" alt="">
+                            <h3>Creatine powder</h3>
+                            <p>
+                                <i class="bx"></i>
+                                Creatine powder is a natural supplement often used to improve athletic performance
+                                <i class="bx"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="~/assets/img/shop/vitamin-3.png" class="testimonial-img" alt="">
+                            <h3>B-complex</h3>
+                            <p>
+                                <i class="bx"></i>
+                                B vitamins are a group of eight essential nutrients that play roles in many organs and bodily systems.
+                                <i class="bx"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="~/assets/img/shop/vitamin-4.png" class="testimonial-img" alt="">
+                            <h3>Calcium</h3>
+                            <p>
+                                <i class="bx"></i>
+                                Calcium is a mineral that is necessary for life. One of benefit of calcium is that it builds strong bones and teeth.
+                                <i class="bx"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+                    <!-- End testimonial item -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title text-register">
+                <h2>Team</h2>
+                <p>Check our Team</p>
+            </div>
+
+            <div class="row">
+
+                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up" data-aos-delay="100">
+                           <div class="member-img">
+                                <img src="~/assets/img/Creatori/Cristi.png" class="img-fluid" alt="">
+                                <div class="social">
+                                     <a href="https://www.facebook.com/cristian.budeanu.967"><i class="bi bi-facebook"></i></a>
+                                     <a href="https://www.instagram.com/cristian_bn_/"><i class="bi bi-instagram"></i></a>
+                                     <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                           </div>
+                           <div class="member-info">
+                                <h4>Cristian Budeanu</h4>
+                           </div>
+                      </div>
+                 </div>
+
+                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up" data-aos-delay="200">
+                           <div class="member-img">
+                                <img src="~/assets/img/Creatori/Alexandra.png" class="img-fluid" alt="">
+                                <div class="social">
+                                     <a href="https://www.facebook.com/alexandra.taranu.37"><i class="bi bi-facebook"></i></a>
+                                     <a href="https://www.instagram.com/alexandra.t.23/"><i class="bi bi-instagram"></i></a>
+                                     <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                           </div>
+                           <div class="member-info">
+                                <h4>Alexandra Țaranu</h4>
+                           </div>
+                      </div>
+                 </div>
+
+                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up" data-aos-delay="300">
+                           <div class="member-img">
+                                <img src="~/assets/img/Creatori/Catalin.png" class="img-fluid" alt="">
+                                <div class="social">
+                                     <a href="https://www.facebook.com/catalin.popa.1217"><i class="bi bi-facebook"></i></a>
+                                     <a href="https://www.instagram.com/catalinn_popa/"><i class="bi bi-instagram"></i></a>
+                                     <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                           </div>
+                           <div class="member-info">
+                                <h4>Cătălin Popa</h4>
+                           </div>
+                      </div>
+                 </div>
+
+                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up" data-aos-delay="400">
+                           <div class="member-img">
+                                <img src="~/assets/img/Creatori/Ruxandra.png" class="img-fluid" alt="">
+                                <div class="social">
+                                     <a href="https://www.facebook.com/ruxanda.vovc.9"><i class="bi bi-facebook"></i></a>
+                                     <a href="https://www.instagram.com/alexsandyru/"><i class="bi bi-instagram"></i></a>
+                                     <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                           </div>
+                           <div class="member-info">
+                                <h4>Ruxanda Vovc</h4>
+                           </div>
+                      </div>
+                 </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Team Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Contact</h2>
+                <p>Contact Us</p>
+            </div>
+
+            <div>
+                <iframe style="width: 100%; height: 270px;" src="https://maps.google.com/maps?q=UTM studentilor&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
